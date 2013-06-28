@@ -1,7 +1,6 @@
-### ScrollingPDFViewer ###
+#ScrollingPDFViewer
 
-===========================================================================
-DESCRIPTION:
+##DESCRIPTION
 
 This is a simple project to show long PDF documents in a UIScrollView. The approach is similar to a UITableView, where each pages are shown in views which are swapped around and reused for efficiency. Rendering is done in the background, managed via NSOperationQueue. This doesn't currently support zooming.
 
@@ -12,8 +11,7 @@ This was a fun little project, but it probably isn't suitable for dropping into 
 The included document, LargeDocument.pdf shows how the app performs when each page of the pdf takes a while to render. This app also works well with pdfs that have several hundred pages that each render very quickly (not included).
 
 
-===========================================================================
-License:
+##License
 
 The MIT License (MIT)
 

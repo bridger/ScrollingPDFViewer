@@ -3,6 +3,9 @@
 #import <QuartzCore/QuartzCore.h>
 
 
+#define PAGE_SPACE 10 //Space between pages
+#define MAX_INVISIBLE_PAGES 9 //Once we have more than this many pages off-screen, they become elligble for re-use
+
 @interface IgnorableBlockOperation : NSBlockOperation
 //An operation may have finished, but we decided we no longer need before it is able to report it's result back to the main thread. We can no longer cancel such an operation, so instead we set it as noLongerNeeded. This is only set/read from the main thread, so it is a safe way of determining if an operation's results should still be used.
 @property (nonatomic) BOOL isNoLongerNeeded;
@@ -211,7 +214,6 @@
     }
 }
 
-#define MAX_INVISIBLE_PAGES 9
 // We have a set of pages that used to be visible ([self visiblePages]). We compare this with the new
 // list of visible pages, and return any old ones to the pool
 - (void)returnNonVisiblePagesToThePool:(NSMutableIndexSet*)currentVisiblePages
